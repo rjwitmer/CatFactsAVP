@@ -11,7 +11,7 @@ import SwiftUI
 struct CatFactsAVPApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ListView()
         }
     }
 }

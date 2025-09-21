@@ -7,34 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC2E28422E804228007D0D22 /* CatBreed.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2E283C2E804228007D0D22 /* CatBreed.swift */; };
+		CC2E28432E804228007D0D22 /* CatFactsAVPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2E283D2E804228007D0D22 /* CatFactsAVPApp.swift */; };
+		CC2E28442E804228007D0D22 /* CatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2E283E2E804228007D0D22 /* CatViewModel.swift */; };
+		CC2E28452E804228007D0D22 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2E28402E804228007D0D22 /* ListView.swift */; };
+		CC2E28462E804228007D0D22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC2E283B2E804228007D0D22 /* Assets.xcassets */; };
+		CC2E284C2E80504D007D0D22 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2E284B2E80504D007D0D22 /* DetailView.swift */; };
 		CCDAE66F2E7F3E41006A209B /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = CCDAE66E2E7F3E41006A209B /* RealityKitContent */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC2E283B2E804228007D0D22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CC2E283C2E804228007D0D22 /* CatBreed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBreed.swift; sourceTree = "<group>"; };
+		CC2E283D2E804228007D0D22 /* CatFactsAVPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatFactsAVPApp.swift; sourceTree = "<group>"; };
+		CC2E283E2E804228007D0D22 /* CatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatViewModel.swift; sourceTree = "<group>"; };
+		CC2E283F2E804228007D0D22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC2E28402E804228007D0D22 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		CC2E284B2E80504D007D0D22 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		CCDAE6692E7F3E41006A209B /* CatFactsAVP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatFactsAVP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCDAE66D2E7F3E41006A209B /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		CCDAE6772E7F3E42006A209B /* Exceptions for "CatFactsAVP" folder in "CatFactsAVP" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = CCDAE6682E7F3E41006A209B /* CatFactsAVP */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		CCDAE66B2E7F3E41006A209B /* CatFactsAVP */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				CCDAE6772E7F3E42006A209B /* Exceptions for "CatFactsAVP" folder in "CatFactsAVP" target */,
-			);
-			path = CatFactsAVP;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		CCDAE6662E7F3E41006A209B /* Frameworks */ = {
@@ -48,10 +40,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC2E28412E804228007D0D22 /* CatFactsAVP */ = {
+			isa = PBXGroup;
+			children = (
+				CC2E283D2E804228007D0D22 /* CatFactsAVPApp.swift */,
+				CC2E283B2E804228007D0D22 /* Assets.xcassets */,
+				CC2E28492E804268007D0D22 /* Models */,
+				CC2E28482E804247007D0D22 /* Views */,
+				CC2E284A2E804275007D0D22 /* ViewModels */,
+				CC2E283F2E804228007D0D22 /* Info.plist */,
+			);
+			path = CatFactsAVP;
+			sourceTree = "<group>";
+		};
+		CC2E28482E804247007D0D22 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CC2E28402E804228007D0D22 /* ListView.swift */,
+				CC2E284B2E80504D007D0D22 /* DetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CC2E28492E804268007D0D22 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CC2E283C2E804228007D0D22 /* CatBreed.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CC2E284A2E804275007D0D22 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				CC2E283E2E804228007D0D22 /* CatViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		CCDAE6602E7F3E41006A209B = {
 			isa = PBXGroup;
 			children = (
-				CCDAE66B2E7F3E41006A209B /* CatFactsAVP */,
+				CC2E28412E804228007D0D22 /* CatFactsAVP */,
 				CCDAE66C2E7F3E41006A209B /* Packages */,
 				CCDAE66A2E7F3E41006A209B /* Products */,
 			);
@@ -87,9 +117,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				CCDAE66B2E7F3E41006A209B /* CatFactsAVP */,
 			);
 			name = CatFactsAVP;
 			packageProductDependencies = (
@@ -138,6 +165,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC2E28462E804228007D0D22 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +176,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC2E28422E804228007D0D22 /* CatBreed.swift in Sources */,
+				CC2E28432E804228007D0D22 /* CatFactsAVPApp.swift in Sources */,
+				CC2E28442E804228007D0D22 /* CatViewModel.swift in Sources */,
+				CC2E284C2E80504D007D0D22 /* DetailView.swift in Sources */,
+				CC2E28452E804228007D0D22 /* ListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +198,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Cat Facts";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -194,6 +228,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Cat Facts";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
