@@ -15,13 +15,25 @@ struct ListView: View {
     var body: some View {
         NavigationStack {
 
-            List(catVM.breeds, id: \.id) { catBreed in
-                Text(catBreed.breed)
+            ZStack {
+                List(catVM.breeds, id: \.id) { catBreed in
+                    NavigationLink(destination: DetailView(catBreed: catBreed)) {
+                        Text(catBreed.breed)
+                    }
+                }
+                .navigationTitle(Text("Cat Breeds:"))
+                
+                if catVM.isLoading {
+                    ProgressView()
+                        .tint(Color.blue)
+                        .scaleEffect(4.0)
+                }
             }
-            .navigationTitle(Text("Cat Breeds:"))
         }
         .task {
             await catVM.getData()
+            await catVM.loadAll()
+
         }
         .padding()
     }

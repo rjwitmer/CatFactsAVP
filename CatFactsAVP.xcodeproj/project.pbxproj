@@ -13,6 +13,7 @@
 		CC2E28452E804228007D0D22 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2E28402E804228007D0D22 /* ListView.swift */; };
 		CC2E28462E804228007D0D22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC2E283B2E804228007D0D22 /* Assets.xcassets */; };
 		CC2E284C2E80504D007D0D22 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2E284B2E80504D007D0D22 /* DetailView.swift */; };
+		CC889F1C2E8199600072656E /* ImageURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC889F1B2E8199600072656E /* ImageURL.swift */; };
 		CCDAE66F2E7F3E41006A209B /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = CCDAE66E2E7F3E41006A209B /* RealityKitContent */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,7 @@
 		CC2E283F2E804228007D0D22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC2E28402E804228007D0D22 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		CC2E284B2E80504D007D0D22 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		CC889F1B2E8199600072656E /* ImageURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURL.swift; sourceTree = "<group>"; };
 		CCDAE6692E7F3E41006A209B /* CatFactsAVP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatFactsAVP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCDAE66D2E7F3E41006A209B /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				CC2E283C2E804228007D0D22 /* CatBreed.swift */,
+				CC889F1B2E8199600072656E /* ImageURL.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				CC2E28422E804228007D0D22 /* CatBreed.swift in Sources */,
 				CC2E28432E804228007D0D22 /* CatFactsAVPApp.swift in Sources */,
 				CC2E28442E804228007D0D22 /* CatViewModel.swift in Sources */,
+				CC889F1C2E8199600072656E /* ImageURL.swift in Sources */,
 				CC2E284C2E80504D007D0D22 /* DetailView.swift in Sources */,
 				CC2E28452E804228007D0D22 /* ListView.swift in Sources */,
 			);

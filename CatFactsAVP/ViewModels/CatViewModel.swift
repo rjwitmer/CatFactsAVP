@@ -45,12 +45,32 @@ class CatViewModel {
             Task { @MainActor in
                 self.total = decodedData.total
                 self.breeds = self.breeds + decodedData.data
-                self._nextPageURL = decodedData.next_page_url ?? ""
+                self.nextPageURL = decodedData.next_page_url ?? ""
                 isLoading = false
             }
         } catch {
             print( "😡 ERROR: Could not load data from \(urlString): \(error.localizedDescription)")
             isLoading = false
+        }
+    }
+    
+    func getNextPage(catBreed: CatBreed) async {
+        guard let lastBreedName = breeds.last else {
+            return
+        }
+        if catBreed.id == lastBreedName.id && !nextPageURL.isEmpty {
+            await getData()
+        }
+    }
+    
+    func loadAll() async {
+        Task { @MainActor in
+            urlString = nextPageURL
+            guard urlString.hasPrefix("http") else {return}
+            
+            await getData() // Get Next Page of data
+            
+            await loadAll() // Recursive call until nextPageURL is null
         }
     }
 }
