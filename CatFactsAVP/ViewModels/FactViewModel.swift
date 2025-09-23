@@ -1,25 +1,27 @@
 //
-//  CatBreed.swift
+//  FactViewModel.swift
 //  CatFactsAVP
 //
-//  Created by Bob Witmer on 2025-09-21.
+//  Created by Bob Witmer on 2025-09-23.
 //
 
 import Foundation
 
 @Observable
-class CatViewModel {
+class FactViewModel {
     private struct Returned: Codable {
         var total: Int
-        var data: [CatBreed]
+        var data: [Fact]
         var next_page_url: String?
     }
     
-    var urlString: String = "https://catfact.ninja/breeds"
+    var urlString: String = "https://catfact.ninja/facts"
     var total: Int = 0
-    var breeds: [CatBreed] = []
+    var facts: [Fact] = []
     var nextPageURL: String = ""
+    var fact: String = ""
     var isLoading: Bool = false
+    var randomIndex: Int = 0
     
     func getData() async {
         print("🕸️ We are accessing url: \(urlString)")
@@ -44,22 +46,13 @@ class CatViewModel {
             }
             Task { @MainActor in
                 self.total = decodedData.total
-                self.breeds = self.breeds + decodedData.data
+                self.facts = self.facts + decodedData.data
                 self.nextPageURL = decodedData.next_page_url ?? ""
                 isLoading = false
             }
         } catch {
             print( "😡 ERROR: Could not load data from \(urlString): \(error.localizedDescription)")
             isLoading = false
-        }
-    }
-    
-    func getNextPage(catBreed: CatBreed) async {
-        guard let lastBreedName = breeds.last else {
-            return
-        }
-        if catBreed.id == lastBreedName.id && !nextPageURL.isEmpty {
-            await getData()
         }
     }
     

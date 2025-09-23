@@ -16,7 +16,7 @@ struct ImageURL {
         "American Wirehair": "https://cattime.com/wp-content/uploads/sites/14/2011/12/GettyImages-1094826686-e1703875084809.jpg?w=500",
         "Arabian Mau": "https://cattime.com/wp-content/uploads/sites/14/2024/01/GettyImages-629675330-e1705089514842.jpg?w=500",
         "Asian": "https://cattime.com/wp-content/uploads/sites/14/2020/05/GettyImages-589049206-e1706298857239.jpg?w=500",
-        "Asian Semi-longhair": "",  // Not found on cattime
+        "Asian Semi-longhair": "https://upload.wikimedia.org/wikipedia/commons/badURL",  // Not found on cattime
         "Australian Mist": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Australian_Mist.jpg",
         "Balinese": "https://cattime.com/wp-content/uploads/sites/14/2011/12/GettyImages-1126736839-e1700062536195.jpg?w=500",
         "Bambino": "https://cattime.com/wp-content/uploads/sites/14/2020/01/GettyImages-639291894-e1704312933774.jpg?w=500",
@@ -25,7 +25,7 @@ struct ImageURL {
         "Bombay": "https://cattime.com/wp-content/uploads/sites/14/2023/11/GettyImages-1226783086-e1701304000519.jpg?w=500",
         "Brazilian Shorthair": "https://cattime.com/wp-content/uploads/sites/14/2011/12/GettyImages-1361394182-e1699287824483.jpg?w=500",
         "British Longhair": "https://upload.wikimedia.org/wikipedia/commons/5/50/British_Longhair_-_Black_Silver_Shaded.jpg",
-        "British Semi-longhair": "",  // Not found on cattime
+        "British Semi-longhair": "https://upload.wikimedia.org/wikipedia/commons/badURL",  // Not found on cattime
         "British Shorthair": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Britishblue.jpg",
         "Burmese": "https://cattime.com/wp-content/uploads/sites/14/2011/12/GettyImages-1144180802-e1698431271496.jpg?w=500",
         "Burmilla": "https://cattime.com/wp-content/uploads/sites/14/2011/12/GettyImages-182783076-e1705090595355.jpg?w=500",
