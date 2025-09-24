@@ -68,7 +68,6 @@ class CatViewModel {
             guard urlString.hasPrefix("http") else {return}
             urlString = nextPageURL
             await getData() // Get Next Page of data
-            
             await loadAll() // Recursive call until nextPageURL is null
         }
     }

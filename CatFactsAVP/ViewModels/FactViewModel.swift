@@ -58,10 +58,9 @@ class FactViewModel {
     
     func loadAll() async {
         Task { @MainActor in
-            guard urlString.hasPrefix("http") else {return}
             urlString = nextPageURL
+            guard urlString.hasPrefix("http") else {return}
             await getData() // Get Next Page of data
-            
             await loadAll() // Recursive call until nextPageURL is null
         }
     }
