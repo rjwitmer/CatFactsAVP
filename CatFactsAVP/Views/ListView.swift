@@ -10,8 +10,8 @@ import RealityKit
 import RealityKitContent
 
 struct ListView: View {
-    @State var catVM: CatViewModel = CatViewModel()
-    @State var factVM: FactViewModel = FactViewModel()
+    @State private var catVM: CatViewModel = CatViewModel()
+    @State private var factVM: FactViewModel = FactViewModel()
     @State private var factSheetIsShown: Bool = false
     @State private var randomFact: String = ""
     
@@ -26,8 +26,7 @@ struct ListView: View {
                         }
                     }
                     .task {
-                        if catVM.nextPageURL.hasPrefix("http") {
-                            catVM.urlString = catVM.nextPageURL
+                        if catVM.urlString.hasPrefix("http") {
                             await catVM.getNextPage(catBreed: catBreed)
                         }
                     }
@@ -62,16 +61,12 @@ struct ListView: View {
                 }
             }
             .sheet(isPresented: $factSheetIsShown) {
-                FactView(fact: Fact(fact: factVM.facts.randomElement()!.fact, length: 1))
+                FactView()
             }
             
         }
         .task {
             await catVM.getData()
-            await factVM.getData()
-            await factVM.loadAll()
-            print("\(factVM.total)")
-            
         }
     }
 }

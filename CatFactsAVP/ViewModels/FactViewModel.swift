@@ -10,18 +10,12 @@ import Foundation
 @Observable
 class FactViewModel {
     private struct Returned: Codable {
-        var total: Int
-        var data: [Fact]
-        var next_page_url: String?
+        var fact: String
     }
     
-    var urlString: String = "https://catfact.ninja/facts"
-    var total: Int = 0
-    var facts: [Fact] = []
-    var nextPageURL: String = ""
+    var urlString: String = "https://catfact.ninja/fact"
     var fact: String = ""
     var isLoading: Bool = false
-    var randomIndex: Int = 0
     
     func getData() async {
         print("🕸️ We are accessing url: \(urlString)")
@@ -45,23 +39,12 @@ class FactViewModel {
                 return
             }
             Task { @MainActor in
-                self.total = decodedData.total
-                self.facts = self.facts + decodedData.data
-                self.nextPageURL = decodedData.next_page_url ?? ""
+                self.fact = decodedData.fact
                 isLoading = false
             }
         } catch {
             print( "😡 ERROR: Could not load data from \(urlString): \(error.localizedDescription)")
             isLoading = false
-        }
-    }
-    
-    func loadAll() async {
-        Task { @MainActor in
-            urlString = nextPageURL
-            guard urlString.hasPrefix("http") else {return}
-            await getData() // Get Next Page of data
-            await loadAll() // Recursive call until nextPageURL is null
         }
     }
 }

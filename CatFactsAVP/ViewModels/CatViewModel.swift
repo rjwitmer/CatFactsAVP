@@ -18,7 +18,6 @@ class CatViewModel {
     var urlString: String = "https://catfact.ninja/breeds"
     var total: Int = 0
     var breeds: [CatBreed] = []
-    var nextPageURL: String = ""
     var isLoading: Bool = false
     
     func getData() async {
@@ -45,7 +44,7 @@ class CatViewModel {
             Task { @MainActor in
                 self.total = decodedData.total
                 self.breeds = self.breeds + decodedData.data
-                self.nextPageURL = decodedData.next_page_url ?? ""
+                self.urlString = decodedData.next_page_url ?? ""
                 isLoading = false
             }
         } catch {
@@ -58,7 +57,7 @@ class CatViewModel {
         guard let lastBreedName = breeds.last else {
             return
         }
-        if catBreed.id == lastBreedName.id && !nextPageURL.isEmpty {
+        if catBreed.id == lastBreedName.id && !urlString.isEmpty {
             await getData()
         }
     }
@@ -66,7 +65,6 @@ class CatViewModel {
     func loadAll() async {
         Task { @MainActor in
             guard urlString.hasPrefix("http") else {return}
-            urlString = nextPageURL
             await getData() // Get Next Page of data
             await loadAll() // Recursive call until nextPageURL is null
         }

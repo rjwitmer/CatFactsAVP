@@ -52,8 +52,7 @@ struct DetailView: View {
 
 extension DetailView {
     var breedImage: some View {
-        AsyncImage(url: URL(string: String(ImageURL.breedImages[catBreed.breed] ?? "http://placehold.it/300x300"))) { phase in
-            if let image = phase.image {    // We have a valid image to show
+        AsyncImage(url: URL(string: String(ImageURL.breedImages[catBreed.breed] ?? ""))) { image in
                 image
                     .resizable()
                     .scaledToFit()
@@ -63,22 +62,17 @@ extension DetailView {
                         RoundedRectangle(cornerRadius: 16)
                             .stroke(.white.opacity(0.5), lineWidth: 1)
                     }
-            } else if phase.error != nil {
-                Image(systemName: "rectangle.slash")
-                    .resizable()
-                    .scaledToFit()
-                    .clipShape(RoundedRectangle(cornerRadius: 16))
-                    .shadow(color: .white, radius: 8, x: 5, y: 5)
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 16)
-                            .stroke(.white.opacity(0.5), lineWidth: 1)
-                    }
-                Text("Image not available")
-            } else {    // Placeholder while image loading
-                ProgressView()
-                    .tint(Color.blue)
-                    .scaleEffect(4.0)
-            }
+        } placeholder: {
+            Image(systemName: "rectangle.slash")
+                .resizable()
+                .scaledToFit()
+                .clipShape(RoundedRectangle(cornerRadius: 16))
+                .shadow(color: .white, radius: 8, x: 5, y: 5)
+                .overlay {
+                    RoundedRectangle(cornerRadius: 16)
+                        .stroke(.white.opacity(0.5), lineWidth: 1)
+                }
+            Text("Image not available")
         }
         .frame(height: 300)
     }

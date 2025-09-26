@@ -9,25 +9,32 @@ import SwiftUI
 
 struct FactView: View {
     @Environment(\.dismiss) var dismiss
-    let fact: Fact
+    @State private var factVM: FactViewModel = FactViewModel()
+
     var body: some View {
-        NavigationStack {
+        VStack {
             Text("🐈  Cat Fact:")
-                .font(.largeTitle)
+                .font(.system(size: 42))
                 .bold()
-                .padding(.bottom)
-            Text(fact.fact)
+
+            Text(factVM.fact)
                 .font(.title2)
+                .multilineTextAlignment(.center)
             Button("Dismiss") {
                 dismiss()
             }
             .tint(Color(.systemBlue))
                 
         }
+        .padding()
         .navigationBarBackButtonHidden()
+        .presentationDetents([.medium])
+        .task {
+            await factVM.getData()
+        }
     }
 }
 
 #Preview {
-    FactView(fact: Fact(fact: "Cat Fact Here", length: 0))
+    FactView()
 }
